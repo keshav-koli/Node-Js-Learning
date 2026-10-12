@@ -1,5 +1,8 @@
 function sum(a, b) {
     return a + b;
 }
+let name = "dsfa"
 
-module.exports = { sum }
+console.log(module);
+
+module.exports = { sum, name }

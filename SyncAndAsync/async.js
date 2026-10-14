@@ -22,12 +22,16 @@ setTimeout(() => {
     console.log(x + y)
 })(a, b)
 
-crypto.pbkdf2("password", "salt", 9000000, 50, "sha512", (err, key) => { // Async way 
+setTimeout(()=>{   // it will not bbe clled until call stack of main thread is emmpty
+    console.log("Set timmeout right now");
+},0)
+
+crypto.pbkdf2("password", "salt", 90000, 50, "sha512", (err, key) => { // Async way 
     console.log(key);
 })
 
-const key=crypto.pbkdf2Sync("password", "salt", 9000000, 50, "sha512") // sync way , it block the main thread 
-console.log(key);
+// const key=crypto.pbkdf2Sync("password", "salt", 9000000, 50, "sha512") // sync way , it block the main thread 
+// console.log(key);
 
 
 file.readFile("myFile.txt", "utf8", (err, data) => {

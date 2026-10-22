@@ -1,15 +1,10 @@
-// mongodb+srv://<db_username>:WCrf6AyI0z0h36wV@cluster0.kotxlfd.mongodb.net/
-// fitnessfreak7gym_db_user
-// WCrf6AyI0z0h36wV
-
-
-let url = "mongodb+srv://fitnessfreak7gym_db_user:WCrf6AyI0z0h36wV@cluster0.kotxlfd.mongodb.net/"
+const url = require("../.env")
 const { MongoClient } = require("mongodb")
-// let client = new MongoClient(url, {
-//   family: 4,
-//   serverSelectionTimeoutMS: 15000
-// }); // this is for i am using personal hotspot if wifi use normal
-let client = new MongoClient(url)
+let client = new MongoClient(url, {
+  family: 4,
+  serverSelectionTimeoutMS: 15000
+}); // this is for i am using personal hotspot if wifi use normal
+// let client = new MongoClient(url)
 let dbName = "myData";
 
 async function main() {
